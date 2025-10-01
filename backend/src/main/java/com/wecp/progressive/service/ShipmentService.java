@@ -1,18 +1,20 @@
 package com.wecp.progressive.service;
 
 import com.wecp.progressive.entity.Shipment;
-
+import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public interface ShipmentService {
-    List<Shipment> getAllShipments();
+    List<Shipment> getAllShipments() throws SQLException;
 
-    Shipment getShipmentById(int shipmentId);
+    Shipment getShipmentById(int shipmentId)throws SQLException;
 
-    int addShipment(Shipment shipment);
+    int addShipment(Shipment shipment)throws SQLException;
 
-    void updateShipment(Shipment shipment);
+    void updateShipment(Shipment shipment)throws SQLException;
 
-    void deleteShipment(int shipmentId);
-
+    void deleteShipment(int shipmentId)throws SQLException;
 }
