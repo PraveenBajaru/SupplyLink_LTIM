@@ -1,22 +1,21 @@
-function login() {
-   
-    // You can perform login validation and authentication here
-    // For simplicity, let's just display an alert
-    
-}
+function login()
+{
+    const username=document.getElementById('loginUsername').value.trim();
+    const password=document.getElementById('loginPassword').value.trim();
+    console.log(`Login clicked. Username: ${username}, Password: ${password}`);
 
+}
 function register() {
-   
+    const name = document.getElementById('registerName').value.trim();
+    const email = document.getElementById('registerEmail').value.trim();
+    const username = document.getElementById('registerUsername').value.trim();
+    const password = document.getElementById('registerPassword').value;
 
-    // Frontend validation for registration form
-    
+    console.log(`Register clicked. Name: ${name}, Email: ${email}, Username: ${username}, Password: ${password}`);
 
-    // Validate email format
-    
-    // Validate username (no special characters)
-    
-
-    // Validate password (at least 8 characters, one capital letter, and one numeric)
     
 }
-module.exports = { login, register };
+if(typeof module!=='undefined' && module.exports )
+{
+    module.exports={login,register};
+}
