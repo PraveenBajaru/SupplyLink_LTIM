@@ -1,0 +1,50 @@
+
+<form [formGroup]="supplierForm" (ngSubmit)="onSubmit()">
+    <label>Supplier Name:</label>
+    <input formControlName="supplierName" />
+    <div *ngIf="supplierForm.get('supplierName')?.errors?.['specialChars']">
+      <small>No special characters allowed.</small>
+    </div>
+    <label>Email:</label>
+    <input formControlName="email" />
+    <div *ngIf="supplierForm.get('email')?.errors?.['email']">
+      <small>Invalid email format.</small>
+    </div>
+  
+    <label>Phone:</label>
+    <input formControlName="phone" />
+  
+    <label>Address:</label>
+    <input formControlName="address" />
+
+    <label>Username:</label>
+  <input formControlName="username" />
+  <div *ngIf="supplierForm.get('username')?.errors?.['specialChars']">
+    <small>No special characters allowed.</small>
+  </div>
+
+  <label>Password:</label>
+  <input type="password" formControlName="password" />
+  <div *ngIf="supplierForm.get('password')?.errors?.['weakPassword']">
+    <small>Password must contain at least one uppercase letter and one number.</small>
+  </div>
+
+  <label>Role:</label>
+  <input formControlName="role" />
+
+  <button type="submit" [disabled]="supplierForm.invalid">Submit</button>
+
+  <div *ngIf="backendError">
+    <p style="color:red">{{ backendError }}</p>
+  </div>
+
+
+  <label>Role:</label>
+  <input formControlName="role" />
+
+  <button type="submit" [disabled]="supplierForm.invalid">Submit</button>
+
+  <div *ngIf="backendError">
+    <p style="color:red">{{ backendError }}</p>
+  </div>
+</form>
